@@ -17,24 +17,22 @@ public class Sorting {
         // Using Radnom Class to Create Random Var to Search
         int x = r.nextInt(10);
 
-        // // Linear Search
-        // System.out.println(x + " is present at " + LinearSearch(arr, x) + " index in
-        // the array" + Arrays.toString(arr));
+        // Linear Search
+        System.out.println(x + " is present at " + LinearSearch(arr, x) + " index in the array" + Arrays.toString(arr));
 
         // Sorting Array
         Arrays.sort(arr);
 
-        // // BinarySearch
-        // System.out.println(x + " is present at " + BinarySearch(arr, x) + " index in
-        // the array" + Arrays.toString(arr));
+        // BinarySearch
+        System.out.println(x + " is present at " + BinarySearch(arr, x) + " index in the array" + Arrays.toString(arr));
 
-        // // Recursive Binary Search
-        // System.out.println(x + " is present at " + RecursiveBinarySearch(arr, 0,
-        // arr.length - 1, x)+ " index in the array" + Arrays.toString(arr));
+        // Recursive Binary Search
+        System.out.println(x + " is present at " + RecursiveBinarySearch(arr, 0,
+                arr.length - 1, x) + " index in the array" + Arrays.toString(arr));
 
-        // // Interpolation Search
-        // System.out.println(x + " is present at " + InterpolationSearch(arr, 0,
-        // arr.length - 1, x)+ " index in the array" + Arrays.toString(arr));
+        // Interpolation Search
+        System.out.println(x + " is present at " + InterpolationSearch(arr, 0,
+                arr.length - 1, x) + " index in the array" + Arrays.toString(arr));
 
         // Fibonacci Search
         System.out.println(x + " is present at " + FibonacciSearch(arr, x, arr.length) + " index in the array"
