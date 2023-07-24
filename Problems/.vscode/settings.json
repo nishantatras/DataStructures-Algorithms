@@ -1,0 +1,6 @@
+{
+  "breadcrumbs.enabled": false,
+  "breadcrumbs.filePath": "off",
+  "breadcrumbs.symbolPath": "off",
+  "notebook.breadcrumbs.showCodeCells": false
+}
