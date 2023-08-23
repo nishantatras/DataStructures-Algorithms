@@ -2,6 +2,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class QuickSort {
+
     public static void main(String[] args) {
         // int[] arr = new int[10];
         int[] arr = { 1, 7, 5, 6, 2 };
