@@ -11,9 +11,23 @@ public class RecursionString {
         // String str3 = "assaaaaavdsss";
         // System.out.println(removeDuplicates(str3));
 
-        int[] arr = { 1, 7, 12, 5, 3, 4, 6 };
-        mergeSort(arr, 0, arr.length - 1);
-        System.out.println(Arrays.toString(arr));
+        // System.out.println(replacePi("ascdvsdvsdpiafcdpi"));
+
+        // System.out.println(StringtoInteger("1234"));
+
+        System.out.println(pairStar("asdsdaaadsaad"));
+    }
+
+    private static String replacePi(String s) {
+        if (s.length() == 0) {
+            return "";
+        }
+        String sub = replacePi(s.substring(1));
+        if (s.charAt(0) == 'p' && sub.charAt(0) == 'i') {
+            return "3.14" + sub.substring(1);
+        } else {
+            return s.charAt(0) + sub;
+        }
     }
 
     private static String removeX(String s) {
@@ -54,4 +68,35 @@ public class RecursionString {
         }
     }
 
+    private static int StringtoInteger(String s) {
+        // if (s.length() == 0) {
+        // return 0;
+        // }
+
+        // int sub = StringtoInteger(s.substring(0, s.length() - 1));
+        // int digit = (int) (s.charAt(s.length() - 1) - 48);
+        // return sub * 10 + digit;
+        // }
+
+        if (s.length() == 0) {
+            return 0;
+        }
+
+        int sub = StringtoInteger(s.substring(1));
+        int digit = (int) (s.charAt(0) - 48);
+        return sub * 10 + digit;
+    }
+
+    private static String pairStar(String s) {
+        if (s.length() == 1) {
+            return s.charAt(0) + "";
+        }
+        String sub = pairStar(s.substring(1));
+
+        if (s.charAt(0) == sub.charAt(0)) {
+            return (s.charAt(0) + "*" + sub);
+        } else {
+            return s.charAt(0) + sub;
+        }
+    }
 }

@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class RecursionString {
+public class RecursionApplications {
     public static void main(String[] args) {
         // String str1 = "axacacszxzxxas";
         // System.out.println(removeX(str1));

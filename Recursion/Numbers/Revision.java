@@ -26,11 +26,29 @@ public class Revision {
 
         // System.out.println(digits(10791));
 
-        System.out.println("Enter which fibonnaci number you want:");
-        int n4 = s.nextInt();
-        System.out.println(fibonacci(n4));
+        // System.out.println("Enter which fibonnaci number you want:");
+        // int n4 = s.nextInt();
+        // System.out.println(fibonacci(n4));
 
+        // System.out.println(sumOfDigits(12234));
+
+        System.out.println(geoSum(3, 2));
         s.close();
+    }
+
+    private static int sumOfDigits(int n) {
+        if (n == 0) {
+            return 0;
+        }
+        return n % 10 + sumOfDigits(n / 10);
+    }
+
+    private static double geoSum(int n, double div) {
+        if (n == 0) {
+            return 1;
+        }
+        double sub = 1 / div;
+        return sub + geoSum(n -= 1, div * 2);
     }
 
     private static int factorial(int n) {

@@ -2,56 +2,54 @@ import java.util.Arrays;
 
 public class MergeSort {
     public static void main(String[] args) {
-        int arr[] = { 1, 7, 12, 5, 3, 4, 6 };
-        mergeSort(arr, 0, arr.length - 1);
-        System.out.println(Arrays.t
-        
-    awhile (si < ei) {
+        // String str1 = "axacacszxzxxas";
+        // System.out.println(removeX(str1));
 
-        int mid = (si + ei) / 2;
-            mergeSort(arr, si, mid);
-            mergeSort(arr, mid + 1, ei);
-            merge(arr, si, ei);
+        // String str2 = "abcdeesdabcaaddcdacd";
+        // System.out.println(replaceCharacter(str2, 'a', 'x'));
+
+        // String str3 = "assaaaaavdsss";
+        // System.out.println(removeDuplicates(str3));
+
+        int[] arr = { 1, 7, 12, 5, 3, 4, 6 };
+        System.out.println(Arrays.toString(arr));
+    }
+
+    private static String removeX(String s) {
+        if (s.length() == 0) {
+            return "";
+        }
+        String sub = removeX(s.substring(1));
+        if (s.charAt(0) == 'x') {
+            return sub;
+        } else {
+            return s.charAt(0) + sub;
         }
     }
 
-    private static void merge(int[] arr, int si, int ei) {
-        int mid = (si + ei) / 2;
-        int n1 = mid - si + 1, n2 = ei - mid;
-        int l[] = new int[n1];
-        int r[] = new int[n2];
-
-        for (int i = 0; i < n1; i++) {
-            l[i] = arr[si + i];
+    private static String replaceCharacter(String s, char ch1, char ch2) {
+        if (s.length() == 0) {
+            return "";
         }
+        String sub = replaceCharacter(s.substring(1), ch1, ch2);
 
-        for (int i = 0; i < n2; i++) {
-            r[i] = arr[mid + i + 1];
+        if (s.charAt(0) == ch1) {
+            return ch2 + sub;
+        } else {
+            return s.charAt(0) + sub;
         }
+    }
 
-        int i = 0, j = 0, k = si;
+    private static String removeDuplicates(String s) {
+        if (s.length() == 1) {
+            return "" + s.charAt(0);
+        }
+        String sub = removeDuplicates(s.substring(1));
 
-        while (i < n1 && j < n2) {
-            if (l[i] <= r[j]) {
-                arr[k] = l[i];
-                i++;
-            } else {
-                arr[k] = r[j];
-                j++;
-            }
-            k++;
+        if (s.charAt(0) == sub.charAt(0)) {
+            return sub;
+        } else {
+            return s.charAt(0) + sub;
         }
-        while (i < n1) {
-            arr[k] = l[i];
-            i++;
-            k++;
-        }
-
-        while (j < n2) {
-            arr[k] = l[j];
-            j++;
-            k++;
-        }
-            
     }
 }
