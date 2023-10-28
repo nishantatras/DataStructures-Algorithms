@@ -5,7 +5,7 @@ public class KeyPad {
     public static void main(String[] args) {
         // String[] arr = KeyPad(92);
         // System.out.println(Arrays.toString(arr));
-        printKeyPad(233, "");
+        printKeyPad(23, "");
     }
 
     private static String[] KeyPad(int n) {

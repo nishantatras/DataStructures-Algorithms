@@ -1,11 +1,10 @@
-package Algorithms;
-
 import java.util.Arrays;
 import java.util.Random;
 
 public class Searching {
     public static void main(String[] args) {
         // Using Radnom Class to Create Random Array
+
         Random r = new Random();
         int arr[] = new int[10];
 
@@ -18,25 +17,35 @@ public class Searching {
         int x = r.nextInt(10);
 
         // Linear Search
+        long start1 = System.nanoTime();
+
         System.out.println(x + " is present at " + LinearSearch(arr, x) + " index in the array" + Arrays.toString(arr));
 
+        long end1 = System.nanoTime();
+        System.out.println("Execution Time is " + (end1 - start1) / 1000000 + " ms");
         // Sorting Array
         Arrays.sort(arr);
 
         // BinarySearch
+        long start2 = System.nanoTime();
+
         System.out.println(x + " is present at " + BinarySearch(arr, x) + " index in the array" + Arrays.toString(arr));
 
-        // Recursive Binary Search
-        System.out.println(x + " is present at " + RecursiveBinarySearch(arr, 0,
-                arr.length - 1, x) + " index in the array" + Arrays.toString(arr));
+        long end2 = System.nanoTime();
+        System.out.println("Execution Time is " + (end2 - start2) / 1000000 + " ms");
 
-        // Interpolation Search
-        System.out.println(x + " is present at " + InterpolationSearch(arr, 0,
-                arr.length - 1, x) + " index in the array" + Arrays.toString(arr));
+        // // Recursive Binary Search
+        // System.out.println(x + " is present at " + RecursiveBinarySearch(arr, 0,
+        // arr.length - 1, x) + " index in the array" + Arrays.toString(arr));
 
-        // Fibonacci Search
-        System.out.println(x + " is present at " + FibonacciSearch(arr, x, arr.length) + " index in the array"
-                + Arrays.toString(arr));
+        // // Interpolation Search
+        // System.out.println(x + " is present at " + InterpolationSearch(arr, 0,
+        // arr.length - 1, x) + " index in the array" + Arrays.toString(arr));
+
+        // // Fibonacci Search
+        // System.out.println(x + " is present at " + FibonacciSearch(arr, x,
+        // arr.length) + " index in the array"
+        // + Arrays.toString(arr));
     }
 
     // Linear Search Method
@@ -52,7 +61,7 @@ public class Searching {
     // Binary Search Method
     static int BinarySearch(int[] arr, int x) {
         int l = 0, r = arr.length - 1;
-        while (l < r) {
+        while (l <= r) {
             int mid = (l + r) / 2;
             if (arr[mid] == x) {
                 return mid;

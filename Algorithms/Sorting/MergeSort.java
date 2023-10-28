@@ -3,6 +3,8 @@ import java.util.Random;
 
 public class MergeSort {
     public static void main(String[] args) {
+        long start = System.nanoTime();
+
         int[] arr = new int[10];
         Random rand = new Random();
         for (int i = 0; i < 10; i++) {
@@ -13,6 +15,9 @@ public class MergeSort {
         MergeSort(arr, 0, arr.length - 1);
         System.out.println("Sorted array:");
         System.out.println(Arrays.toString(arr));
+
+        long end = System.nanoTime();
+        System.out.println("Execution Time is " + (end - start) / 1000000 + " ms");
     }
 
     public static void printArr(int[] arr) {
